@@ -1,0 +1,134 @@
+* { /*En los estilos, reseteamos todo la hoja para usar la fuente Roboto.*/
+    font-family: "Roboto", sans-serif;
+}
+.header{
+    display: flex; /*Usamos display: flex para que todo el contenido herede esta propiedad.*/
+    justify-content: space-between; /*Con justify-content: space-between, separamos los elementos del header entre sí.*/
+    align-items: center; /*Con align-items: center, alineamos verticalmente los elementos del header.*/
+    padding: 20px 50px; /*Añadimos un padding de 20px arriba y abajo, y de 50px a los lados.*/
+}
+.navbar {
+    display: flex; /*Usamos display: flex para que todo el contenido herede esta propiedad.*/
+    gap: 30px; /*Creamos un espacio entre los elementos del menú con gap: 30px.*/
+}
+.navbar-logo {
+    width: 100px; /*Le damos un ancho de 100px al logo.*/
+    height: 100px; /*Le damos un alto de 100px al logo.*/
+}
+.navbar-links {
+    display: flex; /*Usamos display: flex para que todo el contenido herede esta propiedad.*/
+    gap: 30px; /*Creamos un espacio entre los elementos del menú con gap: 30px.*/
+}
+.navbar a {
+    text-decoration: none; /*Eliminamos el subrayado de los enlaces con text-decoration: none.*/
+    color: #333; /*Ajustamos su color en #333.*/
+    font-weight: 500; /*Cambiamos el peso de fuente en 500.*/
+}
+main { 
+    max-width: 1200px; /*Le damos un ancho máximo de 1200px al proyecto.*/
+    margin: 0 auto; /*Centramos todo el contenido con margin: 0 auto.*/
+}
+.hero {
+    display: grid; /*aplicamos display: grid para que todo el contenido herede esta propiedad.*/
+    grid-template-columns: minmax(300px, 2fr) 3fr;/*Creamos dos columnas, la primera con un ancho mínimo de 300px y un máximo de 2fr, y la segunda con un ancho de 3fr.*/
+    grid-auto-rows: 550px;/*Ajustamos el alto de las filas en un máximo de 550px*/
+    border-bottom: 1px solid; /*Añadimos un borde inferior de 1px sólido para separar la sección del resto del contenido.*/
+}
+.hero-image {
+    width: 100%;
+    height: 100%;/*Le damos un alto y ancho del 100% para que siempre ocupe el total del contenedor, sin crecer demasiado ni romperse.*/
+    object-fit: contain;/*nos ayuda a que la imagen se ajuste al espacio que está ocupando. La propiedad contain permite que siempre se vea completa.*/
+}
+.info {
+    align-self: center;/*alineamos el texto verticalmente con align-self: center.*/
+}
+.info-title {
+    color: #333; /*Ajustamos su color en #333.*/
+    font-size: 3rem;
+    font-weight: bolder;/*Cambiamos el tamaño de fuente en 3rem y su peso en bolder.*/
+    margin-bottom: 24px;/*Le damos un margen inferior de 24px.*/
+}
+.info-subtitle {
+    color: #333;/*Ajustamos su color en #333.*/
+    font-size: 1rem;/*Cambiamos el tamaño de fuente en 1rem.*/
+    margin-bottom: 24px;/*Le damos un margen inferior de 24px.*/
+}
+.info-button {
+    border: none;
+    border-radius: 20px;/*Redondeamos las esquinas con border-radius: 20px.*/
+    color: #333;/*Ajustamos su color en #333 y su color de fondo en #fb8c00.*/
+    background-color: #fb8c00;
+    font-weight: bolder;/*Cambiamos el peso de fuente en bolder.*/
+    padding: 12px 24px; /*Le damos un padding superior e inferior de 12px y arriba y abajo de 24px.*/
+}
+.dishes {
+    margin: 100px 0;/*Añadimos un margen superior de 100px y de 0 a los lados para separarla de la sección anterior.*/
+}
+.dishes-title {/*Estilos de la grilla*/
+    color: #333; /*Ajustamos su color en #333*/
+    font-size: 2rem;
+    font-weight: bold;/*Cambiamos el tamaño de fuente en 2rem y su peso en bold.*/
+    margin-bottom: 50px; /*Le damos un margen inferior de 50px.*/
+    text-align: center;/*Centramos el título con text-align: center.*/
+}
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));/*Creamos una grilla con columnas que se ajusten automáticamente al tamaño del contenedor, con un ancho mínimo de 150px y un máximo de 200px.*/
+    grid-auto-rows: 1fr;/*Creamos las filas con un alto de una fracción*/
+    gap: 25px;/*crear un espaciado entre las imágenes.*/
+    justify-content: center;/*Centramos el contenedor*/
+}
+.dishes-item {
+    width: 100%;
+    height: 100%;/*Le damos un ancho y alto del 100% de su contenedor.*/
+    object-fit: cover;/*Usamos object-fit: cover para que ocupe toda la celda en que se encuentra.*/
+}
+/*necesitamos que la primera imagen ocupe cuatro celdas, desde la línea uno, hasta la tres, tanto vertical como horizontalmente.*/
+.dishes-item_big {/*Para ello, llamamos la clase adicional*/
+    grid-area: 1/1/3/3;/*Delimitamos su área desde la primera línea horizontal y vertical, hasta la tercera.*/
+}
+.menu {
+    margin-bottom: 200px; /*separar la clase del final de la sección.*/
+}
+.menu-title {/*Título*/
+    font-size: 2rem;
+    color: #333;
+    font-weight: bolder;/*Le damos un tamaño de 2rem y un color de #333. Agregamos un peso en bolder.*/
+    text-align: center;
+    margin-bottom: 50px;/*Centramos el texto con text-align: center y añadimos un margin inferior con margin-bottom: 50px.*/
+}
+.menu-grid {/*Grilla*/
+    display: grid;
+    gap: 25px;/*Creamos un espaciado entre las imágenes.*/
+    justify-content: center;/*Centramos el contenedor.*/
+    grid-template-columns: repeat(auto-fit, 150px);/*Eliminamos el ancho mínimo y máximo y lo dejamos en 150px para que se mantenga siempre en ese valor.*/
+}
+.menu-grid-item {/*contenedores de imagen con .menu-grid-item.*/
+    background-color: coral;/*Le damos un color de fondo*/
+    padding: 15px;
+    border-top-left-radius: 40px;/*Sólo redondeamos una de sus esquinas*/
+}
+.menu-grid-item img {/*Llamamos cada imagen desde su clase contenedora*/
+    width: 100%;
+    height: 100%;/*Le damos un ancho y alto del 100%.*/
+    object-fit: contain;/*Modificamos la imagen para que se adapte al tamaño de la caja contenedora*/
+}
+footer {
+    display: flex; /*Usamos display: flex para que todo el contenido herede esta propiedad.*/
+    justify-content: center; /*Centramos el contenido del footer con justify-content: center.*/
+    align-items: center; /*Alineamos verticalmente los elementos del footer con align-items: center.*/
+    padding: 20px 0; /*Añadimos un padding de 20px arriba y abajo, y de 0 a los lados.*/
+}
+@media screen and (max-width: 768px) {/*Creamos un media screen que sirva hasta que el ancho supere los 768px*/
+    .hero {
+        grid-template-columns: minmax(300px, 500px);/*Llamamos la clase contenedora de la primera sección y aplicamos un mínimo y máximo fijos a sus columnas*/
+        justify-content: center;/*Centramos el contenedor para evitar que nos sobre demasiado espacio.*/
+    }
+    .hero-image {
+        display: none;
+    }
+     .dishes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(75px, 100px));
+    }
+    
+}
